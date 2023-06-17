@@ -10,7 +10,10 @@ class ViewModelStore {
   final _map = <Key, ViewModel>{};
 
   void put(Key key, ViewModel viewModel) {
-    _map.remove(key)?.dispose();
+    final oldViewModel = _map[key];
+    if (oldViewModel != viewModel) {
+      oldViewModel?.dispose();
+    }
     _map[key] = viewModel;
   }
 
