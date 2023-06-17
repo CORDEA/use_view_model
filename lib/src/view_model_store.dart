@@ -1,7 +1,10 @@
 import 'package:flutter/foundation.dart';
-import 'package:use_view_model/use_view_model.dart';
+
+import 'view_model.dart';
 
 class ViewModelStore {
+  ViewModelStore();
+
   static final defaultInstance = ViewModelStore();
 
   final _map = <Key, ViewModel>{};

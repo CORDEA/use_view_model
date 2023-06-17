@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:use_view_model/src/view_model_store.dart';
+
+import 'view_model_store.dart';
 
 class ViewModelStoreOwner extends InheritedWidget {
-  const ViewModelStoreOwner({
+  ViewModelStoreOwner({
     super.key,
     required super.child,
-    required this.viewModelStore,
-  });
+  }) : viewModelStore = ViewModelStore();
 
   final ViewModelStore viewModelStore;
 
