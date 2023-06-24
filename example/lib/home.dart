@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:use_view_model/use_view_model.dart';
 
+import 'details.dart';
 import 'home_view_model.dart';
 
 class Home extends HookWidget {
@@ -29,6 +30,15 @@ class _HomeBody extends HookWidget {
         _Label(),
         const SizedBox(height: 32),
         _Button(),
+        const SizedBox(height: 64),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => const Details()),
+            );
+          },
+          child: const Text('Details'),
+        ),
       ],
     );
   }
